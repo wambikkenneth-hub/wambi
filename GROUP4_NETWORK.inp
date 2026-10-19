@@ -1,0 +1,140 @@
+[TITLE]
+Five-junction teaching network for EPANET-MATLAB Toolkit
+
+[JUNCTIONS]
+;ID              	Elev        	Demand      	Pattern         
+ J1              	10          	1.0         	                	;
+ J2              	12          	0.8         	                	;
+ J3              	11          	0.9         	                	;
+ J4              	13          	1.0         	                	;
+ J5              	12          	0.7         	                	;
+
+[RESERVOIRS]
+;ID              	Head        	Pattern         
+ R1              	100         	                	;
+
+[TANKS]
+;ID              	Elevation   	InitLevel   	MinLevel    	MaxLevel    	Diameter    	MinVol      	VolCurve        	Overflow
+ T1              	60          	10          	0           	20          	15          	0           	                	;
+
+[PIPES]
+;ID              	Node1           	Node2           	Length      	Diameter    	Roughness   	MinorLoss   	Status
+ P1              	R1              	J1              	250         	200         	120         	0           	Open  	;
+ P2              	J1              	J2              	300         	150         	120         	0           	Open  	;
+ P3              	J1              	J3              	280         	150         	120         	0           	Open  	;
+ P4              	J2              	J4              	350         	150         	120         	0           	Open  	;
+ P5              	J3              	J4              	320         	150         	120         	0           	Open  	;
+ P6              	J4              	J5              	250         	100         	120         	0           	Open  	;
+ P7              	J3              	T1              	220         	150         	120         	0           	Open  	;
+
+[PUMPS]
+;ID              	Node1           	Node2           	Parameters
+
+[VALVES]
+;ID              	Node1           	Node2           	Diameter    	Type	Setting     	MinorLoss   
+
+[TAGS]
+
+[DEMANDS]
+;Junction        	Demand      	Pattern         	Category
+
+[STATUS]
+;ID              	Status/Setting
+
+[PATTERNS]
+;ID              	Multipliers
+
+[CURVES]
+;ID              	X-Value     	Y-Value
+
+[CONTROLS]
+
+[RULES]
+
+[ENERGY]
+ Global Efficiency  	75
+ Global Price       	0
+ Demand Charge      	0
+
+[EMITTERS]
+;Junction        	Coefficient
+
+[QUALITY]
+;Node            	InitQual
+
+[SOURCES]
+;Node            	Type        	Quality     	Pattern
+
+[REACTIONS]
+;Type     	Pipe/Tank       	Coefficient
+
+
+[REACTIONS]
+ Order Bulk            	1
+ Order Tank            	1
+ Order Wall            	1
+ Global Bulk           	0
+ Global Wall           	0
+ Limiting Potential    	0
+ Roughness Correlation 	0
+
+[MIXING]
+;Tank            	Model
+
+[TIMES]
+ Duration           	1:00 
+ Hydraulic Timestep 	1:00 
+ Quality Timestep   	0:05 
+ Pattern Timestep   	1:00 
+ Pattern Start      	0:00 
+ Report Timestep    	1:00 
+ Report Start       	0:00 
+ Start ClockTime    	12 AM
+ Statistic          	NONE
+
+[REPORT]
+ Status             	Yes
+ Summary            	No
+ Page               	0
+
+[OPTIONS]
+ Units              	LPS
+ Headloss           	H-W
+ Specific Gravity   	1
+ Viscosity          	1
+ Trials             	40
+ Accuracy           	0.001
+ CHECKFREQ          	2
+ MAXCHECK           	10
+ DAMPLIMIT          	0
+ Unbalanced         	Continue 10
+ Pattern            	1
+ Demand Multiplier  	1
+ Emitter Exponent   	0.5
+ Quality            	NONE mg/L
+ Diffusivity        	1
+ Tolerance          	0.01
+
+[COORDINATES]
+;Node            	X-Coord           	Y-Coord
+J1              	2.500             	2.700             
+J2              	4.500             	4.000             
+J3              	4.500             	1.300             
+J4              	6.700             	2.700             
+J5              	8.700             	2.700             
+R1              	0.700             	2.700             
+T1              	6.700             	0.400             
+
+[VERTICES]
+;Link            	X-Coord           	Y-Coord
+
+[LABELS]
+;X-Coord             Y-Coord             Label & Anchor Node
+
+[BACKDROP]
+  DIMENSIONS  	0.300             	0.220             	9.100             	4.180             
+ UNITS          	None
+ FILE           	
+ OFFSET         	0.00            	0.00            
+
+[END]
